@@ -73,11 +73,11 @@ pip install -r requirements.txt
 ```bash
 python indexing/build_faiss_index.py
 ```
-###3. Start the backend
+### 3. Start the backend
 ```bash
 uvicorn app.main:app --reload
 ```
-###4. Run the UI
+### 4. Run the UI
 ```bash
 cd ui
 python -m http.server 5500
