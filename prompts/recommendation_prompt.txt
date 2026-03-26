@@ -1,0 +1,17 @@
+The following are snippets retrieved from scientific instrument knowledge bases:
+
+{context}
+
+Based on the knowledge above, determine the most suitable scientific instrument for the user query below.
+You must return your output strictly in the following JSON format. Do not add any text before or after the JSON.
+Keep your reasoning straight to the point (1-2 clean sentences only) and do not copy raw context. Do not mix sections. The reasoning should not mention limitations. Keep limitations concise and completely separate.
+Do not hallucinate features.
+
+{query}
+
+{
+  "instrument": "Main recommended instrument",
+  "reasoning": "1-2 sentences of clean reasoning explaining why this is the best fit",
+  "alternatives": ["alternative 1", "alternative 2"],
+  "limitations": "concise limitations of the recommended instrument"
+}

@@ -1,0 +1,5 @@
+Instrument: FTIR
+Domain: Chemistry, Biology, Environmental Science
+Application: Identifying organic and some inorganic compounds based on functional groups.
+Strengths: Excellent for liquids, gases, and polymers. Fast and requires minimal sample prep. High sensitivity for functional group detection.
+Limitations: Very weak or completely unsuited for analyzing pure metals. Cannot provide high-resolution spatial imaging. Water can sometimes interfere strongly with FTIR spectra, complicating wet sample analysis without specific ATR accessories.

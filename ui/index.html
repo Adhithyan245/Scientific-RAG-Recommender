@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific RAG Recommender</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Scientific RAG Recommender</h1>
+            <p class="subtitle">Instrument recommendation for scientific workflows</p>
+            <div class="status-indicator">
+                <span id="api-status-dot" class="dot offline"></span>
+                <span id="api-status-text">Checking API...</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="card input-card">
+                <h2>Recommendation Criteria</h2>
+                <form id="recommendation-form">
+                    <div class="form-group">
+                        <label for="research_objective">Research Objective *</label>
+                        <input type="text" id="research_objective" name="research_objective" required placeholder="e.g. analyze crystal structure of powdered nanomaterial">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sample_type">Sample Type *</label>
+                            <input type="text" id="sample_type" name="sample_type" required placeholder="e.g. powder">
+                        </div>
+                        <div class="form-group">
+                            <label for="domain">Domain *</label>
+                            <input type="text" id="domain" name="domain" required placeholder="e.g. materials science">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sensitivity">Sensitivity</label>
+                            <input type="text" id="sensitivity" name="sensitivity" placeholder="e.g. medium">
+                        </div>
+                        <div class="form-group">
+                            <label for="resolution">Resolution</label>
+                            <input type="text" id="resolution" name="resolution" placeholder="e.g. high">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="constraints">Constraints</label>
+                        <input type="text" id="constraints" name="constraints" placeholder="e.g. prefer non-destructive analysis">
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label for="debug">
+                            <input type="checkbox" id="debug" name="debug"> 
+                            Enable Debug / Transparency Mode (Shows retrieved chunks)
+                        </label>
+                    </div>
+
+                    <button type="submit" id="submit-btn">Get Recommendation</button>
+                </form>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Analyzing scientific workflows...</p>
+            </div>
+            
+            <div id="error-message" class="error-card hidden"></div>
+
+            <div id="result-container" class="hidden">
+                <!-- Top Recommendation Card -->
+                <div class="card result-card highlight-card" id="top-rec-card">
+                    <div class="result-header">
+                        <h2>Top Recommendation: <span id="res-instrument"></span></h2>
+                        <div class="score-badge">Score: <span id="res-score"></span></div>
+                    </div>
+                    
+                    <div class="result-section">
+                        <h3>Reasoning</h3>
+                        <p id="res-reasoning"></p>
+                    </div>
+
+                    <div class="result-section">
+                        <h3>Limitations</h3>
+                        <p id="res-limitations"></p>
+                    </div>
+
+                    <div class="result-section">
+                        <h3>Alternative Techniques considered by Reasoner</h3>
+                        <div id="res-alternatives"></div>
+                    </div>
+                    
+                    <div class="confidence-bar-container">
+                        <span>Overall Confidence: <span id="res-confidence-text"></span></span>
+                        <div class="confidence-bar">
+                            <div id="res-confidence-fill" class="confidence-fill"></div>
+                        </div>
+                        <p class="confidence-explanation" id="res-confidence-explanation"></p>
+                    </div>
+                </div>
+
+                <!-- Secondary Recommendations -->
+                <div id="secondary-recs-container" class="secondary-recs">
+                    <h3>Other Ranked Instruments</h3>
+                    <div id="secondary-recs-list" class="secondary-recs-list"></div>
+                </div>
+
+                <!-- Warnings -->
+                <div id="warnings-card" class="card warning-card hidden">
+                    <h3>⚠️ Rule Engine Warnings</h3>
+                    <ul id="res-warnings"></ul>
+                </div>
+                
+                <!-- Debug Info -->
+                <div id="debug-card" class="card debug-card hidden">
+                    <h3>🔍 Debug / Transparency Mode</h3>
+                    <div id="debug-content"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

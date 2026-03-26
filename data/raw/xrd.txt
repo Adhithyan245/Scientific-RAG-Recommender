@@ -1,0 +1,5 @@
+Instrument: XRD
+Domain: Materials Science, Chemistry, Geology
+Application: Determining crystal structure, phase composition, and crystallite size of powdered samples.
+Strengths: Non-destructive testing for solid and powder samples. Unmatched for identifying crystalline phases and structures.
+Limitations: Generally incompatible with liquid or gas samples. Cannot identify amorphous phases easily. Poor for pure metals without crystalline structure and trace elements. Sensitivity is typically moderate to low for highly trace components. Resolution is macroscopic/bulk on powders, not atomic imaging.

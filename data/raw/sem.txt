@@ -1,0 +1,5 @@
+Instrument: SEM
+Domain: Materials Science, Biology, Nanotechnology
+Application: Morphological and topographical analysis at high magnification.
+Strengths: Provides fantastic depth of field and high-resolution imaging often approaching sub-nanometer levels. Great for analyzing surface structures and defects.
+Limitations: Demands vacuum compatibility. Wet, biological, or volatile samples might require extensive preparation like freeze-drying or conductive coating. Samples should ideally be solid and conductive. Not typically used for determining bulk phase composition like XRD.

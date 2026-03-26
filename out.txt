@@ -1,0 +1,124 @@
+﻿python : Warning: You 
+are sending 
+unauthenticated 
+requests to the HF 
+Hub. Please set a 
+HF_TOKEN to enable 
+higher rate limits and 
+faster downloads.
+At line:1 char:1
++ python 
+test_pipeline.py 2>&1 
+| Out-File -Encoding 
+utf8 out.txt
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (Warning: You    
+ ar...ster download    
+s.:String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+Traceback (most recent 
+call last):
+  File 
+"C:\Users\Adhithyan Ara
+vind\.gemini\antigravit
+y\scratch\scientific-ra
+g-recommender\test_pipe
+line.py", line 6, in 
+<module>
+    p = pipeline("text2
+text-generation", model
+="google/flan-t5-small"
+)
+  File 
+"C:\Users\Adhithyan Ara
+vind\AppData\Local\Pack
+ages\PythonSoftwareFoun
+dation.Python.3.13_qbz5
+n2kfra8p0\LocalCache\lo
+cal-packages\Python313\
+site-packages\transform
+ers\pipelines\__init__.
+py", line 742, in 
+pipeline
+    normalized_task, 
+targeted_task, 
+task_options = 
+check_task(task)
+                       
+                       
+     ~~~~~~~~~~^^^^^^
+  File 
+"C:\Users\Adhithyan Ara
+vind\AppData\Local\Pack
+ages\PythonSoftwareFoun
+dation.Python.3.13_qbz5
+n2kfra8p0\LocalCache\lo
+cal-packages\Python313\
+site-packages\transform
+ers\pipelines\__init__.
+py", line 355, in 
+check_task
+    return PIPELINE_REG
+ISTRY.check_task(task)
+           ~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~^^^^^^
+  File 
+"C:\Users\Adhithyan Ara
+vind\AppData\Local\Pack
+ages\PythonSoftwareFoun
+dation.Python.3.13_qbz5
+n2kfra8p0\LocalCache\lo
+cal-packages\Python313\
+site-packages\transform
+ers\pipelines\base.py",
+ line 1341, in 
+check_task
+    raise 
+KeyError(f"Unknown 
+task {task}, available 
+tasks are {self.get_sup
+ported_tasks()}")
+KeyError: "Unknown 
+task 
+text2text-generation, 
+available tasks are 
+['any-to-any', 'audio-c
+lassification', 'automa
+tic-speech-recognition'
+, 'depth-estimation', '
+document-question-answe
+ring', 
+'feature-extraction', 
+'fill-mask', 'image-cla
+ssification', 'image-fe
+ature-extraction', 
+'image-segmentation', 
+'image-text-to-text', 
+'keypoint-matching', 
+'mask-generation', 
+'ner', 
+'object-detection', 
+'sentiment-analysis', '
+table-question-answerin
+g', 
+'text-classification', 
+'text-generation', 
+'text-to-audio', 
+'text-to-speech', 'toke
+n-classification', 'vid
+eo-classification', 'ze
+ro-shot-audio-classific
+ation', 'zero-shot-clas
+sification', 'zero-shot
+-image-classification',
+ 'zero-shot-object-dete
+ction']"
+Testing pipeline initialization...
+Error during initialization:
