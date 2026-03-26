@@ -67,3 +67,18 @@ This ensures the system is not just guessing, but making informed decisions.
 ### 1. Install dependencies
 ```bash
 pip install -r requirements.txt
+```
+
+### 2. Build the data index
+```bash
+python indexing/build_faiss_index.py
+```
+###3. Start the backend
+```bash
+uvicorn app.main:app --reload
+```
+###4. Run the UI
+```bash
+cd ui
+python -m http.server 5500
+```
